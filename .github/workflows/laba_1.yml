@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
       
 jobs:
-  build:
+  build_cpp_file:
     runs-on: macos-latest
 
     steps:
@@ -18,11 +18,11 @@ jobs:
       
       - name: build cpp app
         run: |
-          g++ Main.cpp -o first
+          g++ Main.cpp - first.o
     
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
         with:
           name: cpp_app
-          path: first
+          path: first.o
           retetion-days: 7
