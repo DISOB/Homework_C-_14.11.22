@@ -18,10 +18,10 @@ jobs:
       
       - name: build cpp app
         run: |
-          g++ Main.cpp -o first
+          g++ Main.cpp -o first.o
     
       - name: Upload a Build Artifact
-      - uses: aactions/upload-artifact@v3.1.2
+        uses: aactions/upload-artifact@v3.1.2
         with:
           name: cpp_app
           path: first.o
