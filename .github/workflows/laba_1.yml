@@ -1,4 +1,4 @@
-name: build_cpp_laba
+name: build cpp laba
 
 on:
   push:
@@ -12,16 +12,9 @@ jobs:
   build_cpp_file:
     runs-on: macos-latest
 
-    steps: 
-      - name: ls
-        run: ls -la
+    steps:
         
       - uses: actions/checkout@v3
-      
-      - name: env_report
-        run: |
-          ls -la
-          printenv
       
       - name: build_cpp
         run: |
