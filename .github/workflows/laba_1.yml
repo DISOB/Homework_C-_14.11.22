@@ -14,9 +14,15 @@ jobs:
 
     steps: 
       - name: ls
-        run: ls - la
+        run: ls -la
         
       - uses: actions/checkout@v3
+      
+      - name: env_report
+        run: |
+          ls -la
+          printenv
+      
       - name: build_cpp
         run: |
           g++ Main.cpp -o first.o
