@@ -1,1 +1,26 @@
+name: build_cpp_laba
 
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+      
+jobs:
+  build_cpp_file:
+    runs-on: macos-latest
+
+    steps: 
+      - uses: actions/checkout@v3
+      - name: build_cpp
+        run: |
+          g++ Main.cpp -o first.o
+    
+      - name: Upload a Build Artifact
+      - uses: aactions/upload-artifact@v3.1.2
+        with:
+          name: cpp_app
+          path: first.o
+          retetion-days: 7
