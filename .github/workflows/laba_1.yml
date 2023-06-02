@@ -26,4 +26,4 @@ jobs:
         with:
           name: cpp_app
           path: first.o
-          retetion-days: 7
+          retention-days: 7
