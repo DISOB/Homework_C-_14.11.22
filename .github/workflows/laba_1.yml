@@ -18,7 +18,8 @@ jobs:
       
       - name: build cpp app
         run: |
-          g++ Main.cpp -o first.o
+          sudo apt-get update
+          g++ Main.cpp -o output.a
     
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
