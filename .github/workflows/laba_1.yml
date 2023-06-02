@@ -19,7 +19,7 @@ jobs:
       - name: build cpp app
         run: |
           sudo apt-get update
-          g++ Main.cpp -o output.a
+          g++ Main.cpp Func.cpp Func.h -o first.o
     
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
