@@ -37,7 +37,7 @@ jobs:
       
       - name: build cpp app
         run: |
-          brew update
+          sudo apt-get update
           g++ Main.cpp Func.cpp Func.h -o first_mac.o
     
       - name: Upload a Build Artifact
