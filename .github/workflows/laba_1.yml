@@ -29,22 +29,4 @@ jobs:
           name: cpp_app
           path: ${{ env.app_name }}
           retention-days: 7
-          
-#   build_cpp_mac:
-#     runs-on: macos-latest
-
-#     steps:
-#       - name: Checkout the code
-#         uses: actions/checkout@v3
-      
-#       - name: build cpp app
-#         run: |
-#           sudo apt-get update
-#           g++ Main.cpp Func.cpp Func.h -o first_mac.o
-    
-#       - name: Upload a Build Artifact
-#         uses: actions/upload-artifact@v3.1.2
-#         with:
-#           name: cpp_app
-#           path: first_mac.o
-#           retention-days: 7
+        
