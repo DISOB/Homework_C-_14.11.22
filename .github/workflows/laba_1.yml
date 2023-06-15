@@ -12,6 +12,8 @@ jobs:
   build_cpp_lin:
     runs-on: ubuntu-latest
 
+    env:
+      app_name: first.o
     steps:
       - name: Checkout the code
         uses: actions/checkout@v3
@@ -19,13 +21,13 @@ jobs:
       - name: build cpp app
         run: |
           sudo apt-get update
-          g++ Main.cpp Func.cpp Func.h -o first_lin.o
+          g++ Main.cpp Func.cpp Func.h -o ${{ env.app_name }}
     
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
         with:
           name: cpp_app
-          path: first_lin.o
+          path: ${{ env.app_name }}
           retention-days: 7
           
 #   build_cpp_mac:
