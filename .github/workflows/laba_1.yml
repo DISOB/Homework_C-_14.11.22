@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
       
 jobs:
-  build_cpp_file:
+  build_cpp_lin:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,11 +19,30 @@ jobs:
       - name: build cpp app
         run: |
           sudo apt-get update
-          g++ Main.cpp Func.cpp Func.h -o first.o
+          g++ Main.cpp Func.cpp Func.h -o first_lin.o
     
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
         with:
           name: cpp_app
-          path: first.o
+          path: first_lin.o
+          retention-days: 7
+          
+  build_cpp_mac:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v3
+      
+      - name: build cpp app
+        run: |
+          sudo apt-get update
+          g++ Main.cpp Func.cpp Func.h -o first_mac.o
+    
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: cpp_app
+          path: first_mac.o
           retention-days: 7
